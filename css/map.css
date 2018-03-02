@@ -1,0 +1,21 @@
+body{
+    background:#8bc34a;
+}
+
+.game-board{
+    background: #8bc34a;
+    margin: 0 auto;
+}
+
+.game-board td{
+    width: 25px;
+    height: 25px;
+}
+
+.game-board td.saddlebrown{
+    background: saddlebrown;
+}
+
+.game-board td.gold{
+    background: gold;
+}
