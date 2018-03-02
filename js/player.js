@@ -31,6 +31,11 @@ class Player {
     }
 
     move(el){
+
+        if(el.dataset.type != 'road'){
+            return false;
+        }
+        
         if(el.nodeName != "TD"){
             return false;
         }
