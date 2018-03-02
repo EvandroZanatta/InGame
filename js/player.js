@@ -1,3 +1,40 @@
+function calcDistance(elDestiny){
+
+    var distance_x = 0,
+        distance_y = 0;
+
+    elHero = document.getElementById("hero1");
+    elHero = elHero.parentNode;
+
+    elHero_x = elHero.dataset.x;
+    elHero_y = elHero.dataset.y;
+
+    elDestiny_x = elDestiny.dataset.x;
+    elDestiny_y = elDestiny.dataset.y;
+
+    if(elHero_x < elDestiny_x){
+        distance_x = elDestiny_x - elHero_x;
+    }else{
+        distance_x = elHero_x - elDestiny_x;
+    }
+
+    if(elHero_y < elDestiny_y){
+        distance_y = elDestiny_y - elHero_y;
+    }else{
+        distance_y = elHero_y - elDestiny_y;
+    }
+
+    if(distance_x > 1 || distance_y > 1){
+        return false;
+    }
+
+    if(distance_x > 0 && distance_y > 0){
+        return false;
+    }
+
+    return true;
+    
+}
 class Player {
 
     constructor(board) {
@@ -9,7 +46,7 @@ class Player {
         this.localPlayer1.innerHTML = this.imgPlayer;
         this.seletor = 'hero1';
     }
-
+    
     getSeletor(){
         return this.seletor;
     }
@@ -39,6 +76,11 @@ class Player {
         if(el.nodeName != "TD"){
             return false;
         }
+
+        if(calcDistance(el) ==  false){
+            return false;
+        }
+
         this.removePlayer(el);
         this.setCurrentPos(el);
         this.addPlayer(el);
