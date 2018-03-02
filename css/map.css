@@ -12,10 +12,10 @@ body{
     height: 25px;
 }
 
-.game-board td.saddlebrown{
+.game-board td.road{
     background: saddlebrown;
 }
 
-.game-board td.gold{
+.game-board td.nexus{
     background: gold;
 }
